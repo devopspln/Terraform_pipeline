@@ -417,11 +417,19 @@ data:
 
   performance-log.conf: |
     [INPUT]
-        Name                statsd   # Use the appropriate input plugin (e.g., statsd, prometheus, etc.) for performance metrics
-        Tag                 performance.*
-        Listen              0.0.0.0
-        Port                8125
-
+        Name                cpu
+        Tag                 performance.cpu
+        Interval_Sec        20
+        
+    [INPUT]
+        Name                mem
+        Tag                 performance.mem
+        Interval_Sec        10
+        
+    [INPUT]
+        Name                disk
+        Tag                 performance.disk
+        Interval_Sec        10
     [FILTER]
         Name                performance_filter
         Match               performance.*
