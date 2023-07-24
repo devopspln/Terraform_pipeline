@@ -435,8 +435,8 @@ data:
         Name                modify
         Match               performance.*
         # Add dimensions here based on your Kubernetes metadata
-        Add                 kube-apiserver-ip-10-0-69-40.eu-central-1.compute.internal        ${kubernetes.pod.name}
-        Add                 kube-system      ${kubernetes.namespace.name}
+        Add                 PodName        ${kubernetes.pod.name}
+        Add                 Namespace     ${kubernetes.namespace.name}
 
     [OUTPUT]
         Name                cloudwatch_logs
