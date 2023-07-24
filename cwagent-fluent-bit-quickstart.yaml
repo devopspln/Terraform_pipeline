@@ -430,10 +430,6 @@ data:
         Name                disk
         Tag                 performance.disk
         Interval_Sec        10
-    [FILTER]
-        Name                performance_filter
-        Match               performance.*
-        # Add any necessary filtering or transformations for performance logs here
 
     [OUTPUT]
         Name                cloudwatch_logs
