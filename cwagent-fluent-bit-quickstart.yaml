@@ -435,13 +435,6 @@ data:
         Name                kubernetes
         Match               performance.*
         Merge_Log           On
-        
-    [FILTER]
-        Name                modify
-        Match               performance.*
-        # Add dimensions here based on your Kubernetes metadata
-        Add                 PodName        ${kubernetes.pod.name}
-        Add                 Namespace     ${kubernetes.namespace.name}
 
     [OUTPUT]
         Name                cloudwatch_logs
