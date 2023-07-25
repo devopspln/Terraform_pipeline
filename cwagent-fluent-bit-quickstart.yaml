@@ -441,6 +441,8 @@ data:
     [FILTER]
         Name                modify
         Match               performance.*
+        Add                 PodName        ${$.kubernetes.container_name}
+        Add                 Namespace      ${$.kubernetes.namespace_name}
 
     [OUTPUT]
         Name                cloudwatch_logs
