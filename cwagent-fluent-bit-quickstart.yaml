@@ -439,9 +439,6 @@ data:
     [FILTER]
         Name                modify
         Match               performance.*
-        # Add dimensions here based on your Kubernetes metadata
-        Add                 PodName        ${$.kubernetes.labels.pod_name}
-        Add                 Namespace      ${$.kubernetes.namespace_name}
 
     [OUTPUT]
         Name                cloudwatch_logs
