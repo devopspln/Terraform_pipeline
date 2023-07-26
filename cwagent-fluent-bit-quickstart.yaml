@@ -436,7 +436,7 @@ data:
         Match               performance.*
         Merge_Log           On
         Merge_Log_Key       log
-        Kube_Tag_Prefix     kube.var.log.containers.
+        Kube_Tag_Prefix     kube.var.log.containers.*
 
     [FILTER]
         Name                modify
