@@ -441,8 +441,8 @@ data:
     [FILTER]
         Name                modify
         Match               dataplane.*
-        Add                 PodName        ${$.kubernetes.container_name}
-        Add                 Namespace      ${$.kubernetes.namespace_name}
+        Add                 PodName        kube-apiserver-ip-10-0-119-190.eu-central-1.compute.internal
+        Add                 Namespace      kube-system
 
     [OUTPUT]
         Name                cloudwatch_logs
