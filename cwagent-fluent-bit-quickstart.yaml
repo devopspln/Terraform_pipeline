@@ -430,19 +430,20 @@ data:
         Name                disk
         Tag                 performance.disk
         Interval_Sec        10
-        
+
+
     [FILTER]
         Name                kubernetes
         Match               performance.*
         Merge_Log           On
-        Merge_Log_Key       log
-        Kube_Tag_Prefix     kube.var.log.containers.*
-
-    [FILTER]
-        Name                modify
-        Match               dataplane.*
-        Add                 PodName        kube-apiserver-ip-10-0-119-190.eu-central-1.compute.internal
-        Add                 Namespace      kube-system
+        Merge_Log_Key       log_processed
+        K8S-Logging.Parser  On
+        K8S-Logging.Exclude Off
+        Labels              On
+        Annotations         On
+        Use_Kubelet         On
+        Kubelet_Port        10250
+        Buffer_Size         0
 
     [OUTPUT]
         Name                cloudwatch_logs
